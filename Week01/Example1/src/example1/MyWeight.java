@@ -9,19 +9,18 @@ package example1;
  *
  * @author afernandez
  */
-public class Example1 {
+public class MyWeight {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        int number = 2;
-        
-        System.out.println("Hello world!");
-        System.out.println("the number is... " + number);
-        System.out.println(true);
+        int kg = 10;
+        double pounds;
+        pounds = kg * 2.2;
+        System.out.println( "" + kg + " Kg is " + pounds + " pounds");
         System.exit(0);
+        // TODO code application logic here
     }
     
 }

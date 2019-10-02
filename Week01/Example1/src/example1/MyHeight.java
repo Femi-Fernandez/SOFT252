@@ -9,18 +9,19 @@ package example1;
  *
  * @author afernandez
  */
-public class Example1 {
+public class MyHeight {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int number = 2;
-        
-        System.out.println("Hello world!");
-        System.out.println("the number is... " + number);
-        System.out.println(true);
+        double cm = 175.0;
+        double in;
+        double feet;
+        in = cm / 2.54;
+        feet = in/12;
+        System.out.println( "" + cm + " cm is " + in + " inches or " + feet + " feet");
         System.exit(0);
     }
     
