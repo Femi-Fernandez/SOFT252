@@ -87,7 +87,17 @@ public class StageResultsTest {
 
     @Test
     public void testIsComplete() {
-        fail("Test not yet implemented");
+       //fail("Test not yet implemented");
+       System.out.println("Testing isComplete");
+       
+       //check that the empty project is 'not complete'
+       assertFalse("empty object", empty.isComplete());
+       
+       //check that the full project is ' complete'
+       assertTrue("full object", full.isComplete());
+       
+       //check that the halfFull project is not complete'
+       assertFalse("halfFull object", halfFull.isComplete());
     }
 
     @Test
