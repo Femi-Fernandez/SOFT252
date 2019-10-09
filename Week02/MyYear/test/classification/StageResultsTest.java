@@ -66,9 +66,29 @@ public class StageResultsTest {
     }
 
     @Test
-    public void testAddModuleMark() {
+    public void testAddModuleMark() {        
+        //fail("Test not yet implemented");
+        System.out.println("Testing AddModuleMark");
         
-        fail("Test not yet implemented");
+        //test for 10 credit module
+        empty.addModuleMark(10, 50.0);
+        double expMarkValue = 50.0;  
+        assertEquals("marks", expMarkValue, empty.getTotalMarks(), 50.0);
+        empty.resetValues();
+        
+        //test for 20 credit module
+        empty.addModuleMark(20, 50.0);
+        expMarkValue = 100.0;
+        assertEquals("marks", expMarkValue, empty.getTotalMarks(), 100.0);
+        empty.resetValues();
+        
+        //test for 40 credit module
+        empty.addModuleMark(40, 50.0);
+        expMarkValue = 200;
+        assertEquals("marks", expMarkValue, empty.getTotalMarks(), 200.0);
+        empty.resetValues();
+
+
     }
 
     @Test
