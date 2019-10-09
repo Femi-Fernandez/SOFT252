@@ -35,6 +35,11 @@ public class StageResults {
     public double getTotalMarks() {
         return totalMarks;
     }
+    
+    public void addModuleMark(int credits, double mark){
+        totalCredits += credits;
+        totalMarks += mark*(credits/10);
+    }
 
     /*
      * takes the stage 2 average as a parameter and places it
