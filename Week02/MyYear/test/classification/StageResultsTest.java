@@ -127,7 +127,41 @@ public class StageResultsTest {
 
     @Test
     public void testPredictClass() {
-        fail("Test not yet implemented");
+        //fail("Test not yet implemented");
+        System.out.println("testing predictClass");
+
+        // Array to hold the stage 3 marks
+        double[] marks = {0.00, 50.00, 50.00, 100.00, 39.99, 40.0,
+              49.99, 50.0, 59.99, 60.0, 69.99, 70.0, 99.99, 35.67,
+              44.22, 56.39, 64.00, 76.80};
+        // Array of corresponding classifications with no stage 2 marks
+        String[] expResult1 = {"No marks!", "Lower 2nd",
+              "Lower 2nd", "1st", "FAIL", "3rd", "3rd", "Lower 2nd",
+              "Lower 2nd", "Upper 2nd", "Upper 2nd", "1st", "1st",
+              "FAIL", "3rd", "Lower 2nd", "Upper 2nd", "1st"};
+
+        // Run tests with no stage 2 average
+        for (int count = 0; count < marks.length; count++) {
+            full.resetValues();
+            full.addModuleMark(120, marks[count]);
+            assertEquals("120 credits, mark = " + marks[count], expResult1[count],
+            full.predictClass());
+        } 
+        
+        double[] stage2Marks = {0.0, 50.0, 52.03, 91.0, 44.79, 42.86, 50.83, 
+                54.47, 56.34, 68.77, 69.99, 63.57, 99.99, 36.57, 47.84, 62.57,
+                64.30, 78.66};
+        String[] expResult2 = {"No marks!", "Lower 2nd", "Lower 2nd", "1st", 
+                "3rd", "3rd", "Lower 2nd", "Lower 2nd", "Lower 2nd", "Upper 2nd", 
+                "Upper 2nd", "Upper 2nd", "1st", "FAIL", "3rd", "Upper 2nd", 
+                "Upper 2nd", "1st"};
+        for (int i = 0; i < stage2Marks.length; i++) {
+            full.resetValues();
+            full.addModuleMark(120, stage2Marks[i]);
+            assertEquals("120 credits, mark = " + stage2Marks[i], expResult2[i],
+            full.predictClass());
+        }
+        
     }
 
     @Test
