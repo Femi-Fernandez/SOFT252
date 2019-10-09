@@ -88,12 +88,41 @@ public class StageResultsTest {
         assertEquals("marks", expMarkValue, empty.getTotalMarks(), 200.0);
         empty.resetValues();
 
-
     }
 
     @Test
     public void testCalculateAverageSoFar() {
-        fail("Test not yet implemented");
+        //fail("Test not yet implemented");
+        System.out.println("Testing calculateAverageSoFar");
+        
+        //test with no credits and no marks
+        assertEquals("empty", 0.0, empty.calculateAverageSoFar(), 0.0);
+        
+        //test with 120 credits at 50%
+        assertEquals("full at 50%", 50.0, full.calculateAverageSoFar(), 0.0);
+        
+        //test with 120 credits at 100%
+        full.resetValues();
+        full.addModuleMark(120, 100.0);
+        assertEquals("full at 100%", 100.0, full.calculateAverageSoFar(), 0.0);
+        
+        //test with 120 credits at 43.92%
+        full.resetValues();
+        full.addModuleMark(120, 43.92);
+        assertEquals("full at 43.92%", 43.92, full.calculateAverageSoFar(), 0.0);
+        
+        //test with 60 credits at 50% (halfFull)
+        assertEquals("halfFull at 50%", 50.0, halfFull.calculateAverageSoFar(), 0.0);
+        
+        //test with 60 credits at 100%
+        halfFull.resetValues();
+        halfFull.addModuleMark(60, 100);
+        assertEquals("half full at 100%", 100.0, halfFull.calculateAverageSoFar(), 0.0);
+        
+        //test with 60 credits at 64.77%
+        halfFull.resetValues();
+        halfFull.addModuleMark(60, 64.77);
+        assertEquals("half full at 64.77%", 64.77, halfFull.calculateAverageSoFar(), 0.0);
     }
 
     @Test
