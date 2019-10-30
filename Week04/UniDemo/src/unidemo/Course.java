@@ -22,8 +22,15 @@ public class Course {
         this.room = room;
     }
 
-    
-    
+    public Lecturer getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Lecturer teacher) {
+        this.teacher = teacher;
+        
+    }
+
     public String getCode() {
         return code;
     }

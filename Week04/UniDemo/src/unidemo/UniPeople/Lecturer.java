@@ -10,10 +10,11 @@ package unidemo.UniPeople;
  * @author afernandez
  */
 public class Lecturer extends UniPeople implements ITeach {
-
-    public void setCoursework(){
-        course.setCoursework("temp");
+   
+    public void setCoursework(String courseWork) {
+        course.setCoursework(courseWork);   
     }
+
     
     public void teach(){
     System.out.println(name + " is teaching " + course.getCode() + " in room "
@@ -23,4 +24,6 @@ public class Lecturer extends UniPeople implements ITeach {
         public Lecturer(String name, int id) {
         super(id, name);
     }
+
+
 }

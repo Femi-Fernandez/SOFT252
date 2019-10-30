@@ -22,6 +22,24 @@ public class UniDemo {
         Lecturer lecturer = new Lecturer("Joseph", 99);
     
         Admin.getDetails(student);
+        
+        Admin.assignCourse(lecturer, course);
+        Admin.assignCourse(student, course);
+       
+        
+        lecturer.teach();
+        
+        student.attendClass();
+        
+        student.doCoursework();
+            
+        lecturer.setCoursework("Design Document");
+        
+        student.doCoursework();
+        
+        Admin.getDetails(student);
+               
+        
     }
     
 }

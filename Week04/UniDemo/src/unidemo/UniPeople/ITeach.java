@@ -10,6 +10,6 @@ package unidemo.UniPeople;
  * @author afernandez
  */
 public interface ITeach {
-    public void setCoursework();
-    public void teach();
+     void setCoursework(String courseWork);
+     void teach();
 }

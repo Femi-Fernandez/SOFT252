@@ -12,11 +12,19 @@ import unidemo.Course;
  * @author afernandez
  */
 public class Admin {
-    public static void assignCourse(UniPeople person, Course temp){
+    public static void assignCourse(Student student, Course temp){
     
-        person.course.setCode(temp.getCode());
+        student.course = temp;
+        
     }
     
+    public static void assignCourse(Lecturer lecturer, Course temp){
+        temp.setTeacher(lecturer);
+        lecturer.course = temp;
+        
+    }
+    
+
     public static void getDetails(UniPeople person)
     {
     System.out.println(person.getName() + person.getId());
