@@ -18,7 +18,7 @@ public class StockTracker {
      */
     public static void main(String[] args) {
         
-        PhysicalStockItem objPhysicalItem = 
+        /*PhysicalStockItem objPhysicalItem = 
                 new PhysicalStockItem("Snuff: a Diskworld book by Terry Pratchet", 0);
         ServiceStockItem objVirtualItem = 
                 new ServiceStockItem("Wintersmith: a Diskworld ebook by terry Pratchet");
@@ -35,6 +35,27 @@ public class StockTracker {
                 + ", is in stock = " + objVirtualItem.isInStock()
                 + ", Quantity in stock: " + objVirtualItem.getQuantityInStock();
         System.out.println(strMessage);
+*/
+        
+        StockItem objTestItem1 = new PhysicalStockItem("Starcraft Manual");
+        StockItem objTestItem2 = new PhysicalStockItem("Halo 3", 100);
+        StockItem objTestItem3 = new ServiceStockItem("Delivery");
+
+        if (objTestItem1.getItemType() == StockType.PHYSICALITEM) {
+            System.out.println("Item 1 is a PHYSICAL stock item");
+        } else{
+            System.out.println("Item 1 is a SERVICE stock item");
+        }
+        if (objTestItem2.getItemType() == StockType.PHYSICALITEM) {
+            System.out.println("Item 1 is a PHYSICAL stock item");
+        } else{
+            System.out.println("Item 1 is a SERVICE stock item");
+        }
+        if (objTestItem3.getItemType() == StockType.PHYSICALITEM) {
+            System.out.println("Item 1 is a PHYSICAL stock item");
+        } else{
+            System.out.println("Item 1 is a SERVICE stock item");
+        }
     }
     
 }
